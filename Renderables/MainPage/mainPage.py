@@ -8,7 +8,8 @@ class MainPage(Renderable):
         #buttons : (120, 460), (320, 510), (150, 640), (355, 695)
     
     def getstep(self, mouseX, mouseY):
-        mainPageImage = [['image', '../Images/MainPage.png', 0, 0]]
+        mainPageImage = [['image', '../Images/MainPage.png', 0, 0, 650, 800]]
+        
         levels = [Level1(), Level2(), Level3(), Level4()]
         if mouseX == None: #if nothing is clicked return mainPage
             return mainPageImage, self
