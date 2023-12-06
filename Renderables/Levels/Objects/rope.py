@@ -1,10 +1,11 @@
 from Renderables.Levels.object import Object
 
 class RopeSegment(Object):
-    def __init__(self, x, y, leftNeighbor, rightNeighbor, d=3, k=100, m=1, air=0.005):
+    def __init__(self, x, y, leftNeighbor, rightNeighbor, d=3, k=6, m=0.08, air=0.0005):
         super().__init__(x, y, [[leftNeighbor, d, k], [rightNeighbor, d, k]], m, air)
         self.d = d
         self.k = k
+        self.g = 3000
         self.cut = False
 
     def drawItems(self):
@@ -20,7 +21,7 @@ class RopeSegment(Object):
             righty = self.getRight().y
             items.append(['line', self.x, self.y, rightx, righty, "yellow"])
 
-        items.append(['circle', self.x, self.y, 3, "yellow"])
+        items.append(['circle', self.x, self.y, 3, "yellow", 100])
         return items
         
     def getLeft(self):

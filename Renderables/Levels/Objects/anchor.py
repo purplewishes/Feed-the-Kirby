@@ -13,4 +13,4 @@ class Anchor(Object):
         pass
 
     def drawItems(self):
-        return [['circle', self.x, self.y, 10, 'brown']]
+        return [['circle', self.x, self.y, 10, 'brown', 100]]

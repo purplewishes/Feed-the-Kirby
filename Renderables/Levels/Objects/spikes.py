@@ -8,5 +8,8 @@ class Spikes(Object):
     def step(self):
         pass
 
-    def drawItems(self):
+    def calculateStep(self):
         pass
+
+    def drawItems(self):
+        return [['image', '../Images/Spikes.png', self.x, self.y, 150, 150]]

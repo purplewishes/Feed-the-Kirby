@@ -5,8 +5,11 @@ class Point(Object):
         self.x = x
         self.y = y
 
-    def step(self): #updates object
+    def step(self): 
         pass
 
-    def drawItems(self): #returns list of drawables
-        return [['image', '../Images/Point.png', self.x, self.y]]
+    def calculateStep(self):
+        pass
+
+    def drawItems(self): 
+        return [['circle', self.x, self.y, 15, "cyan", 70]]

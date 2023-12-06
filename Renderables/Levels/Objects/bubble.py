@@ -7,6 +7,9 @@ class Bubble(Object):
     
     def step(self):
         pass
+    
+    def calculateStep(self):
+        pass
 
     def drawItems(self):
-        pass
+        return [['image', '../Images/Bubble.png', self.x, self.y, 100, 100]]

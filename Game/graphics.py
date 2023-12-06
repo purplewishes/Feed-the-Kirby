@@ -32,7 +32,7 @@ def onMouseRelease(app, mouseX, mouseY):
 
 
 def onStep(app):
-    app.drawItems, app.currentRenderable = app.currentRenderable.getstep(app.mouseX, app.mouseY, )
+    app.drawItems, app.currentRenderable = app.currentRenderable.getStep(app.mouseX, app.mouseY)
     if app.currentRenderable == None:
         app.currentRenderable = MainPage()
 
@@ -41,12 +41,13 @@ def redrawAll(app):
         if item[0] == 'image':
             myImage = CMUImage(openImage(item[1]))
             drawImage(myImage, item[2], item[3], width = item[4], height = item[5])
-
+            del myImage
         elif item[0] == 'line':
             drawLine(item[1], item[2], item[3], item[4], fill = item[5], lineWidth = 6)
 
         elif item[0] == 'circle':
-            drawCircle(item[1], item[2], item[3], fill = item[4])
+            drawCircle(item[1], item[2], item[3], fill = item[4], opacity = item[5])
+
 
 if __name__ == "__main__":
     runApp(CANVAS_WIDTH, CANVAS_HEIGHT)
